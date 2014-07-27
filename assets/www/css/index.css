@@ -1,0 +1,71 @@
+#theLogo
+{
+	margin: auto;
+	background-image:url(../img/logo.png);
+	height:135px;
+	width:134px;
+	display: block;
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	z-index:1;
+}
+
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper
+{
+	background:#ffffff;
+}
+
+.text-label {
+	color: #cdcdcd;
+	font-weight: bold;
+}
+
+#SearchPanel
+{
+	/*display:none;*/
+	position:absolute;
+	background-color:#FFF;
+}
+
+.topSearchBoxCointeiner
+{
+	float:left; display:block; height:auto; width:100%; position:fixed; background:#FFF; z-index::9999999999;
+}
+
+.topSearchBoxCointeiner > div
+{
+	float:left;
+	padding:5px;
+}
+
+#search_preloader
+{
+	background-image:url(../img/loading.gif);height:30px;width:30px; background-position:center center; background-repeat:no-repeat; display:none;
+}
+
+#searchBox
+{
+	height:30px; 
+	outline:none;
+	border: 0px none;
+	border-bottom:2px solid;
+}
+
+#SearchResult > div
+{
+	background-color: #EEEEEE;
+	height:30px; margin-top:5px; margin-bottom:5px; padding:10px; font-weight:bold; vertical-align: middle; cursor:pointer;
+}
+
+.edit-page, #page-actions, .catlinks, .printfooter
+{
+	display:none;
+}
+
+.sibling-page
+{
+    display:none;
+}

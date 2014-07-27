@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language id="en">
+	<string id="home"><![CDATA[Home]]></string>
+	<string id="save_page"><![CDATA[Save Page]]></string>
+	<string id="saved_pages"><![CDATA[Saved Pages]]></string>
+    <string id="_search"><![CDATA[Search]]></string>
+    <string id="settings"><![CDATA[Settings]]></string>
+	<string id="change_settings"><![CDATA[Change Settings]]></string>
+	<string id="change_settings_from_here"><![CDATA[Change Settings here]]></string>
+	<string id="change_language"><![CDATA[Change Language]]></string>
+	<string id="language_english"><![CDATA[English]]></string>
+	<string id="language_german"><![CDATA[Deutsch]]></string>
+	<string id="language_espanol"><![CDATA[Español]]></string>
+	<string id="change_font_size"><![CDATA[Change Font Size]]></string>
+	<string id="apply"><![CDATA[Apply]]></string>
+	<string id="page_have_been_saved"><![CDATA[Page has been saved]]></string>
+	<string id="saved_on"><![CDATA[Saved on ]]></string>
+    <string id="searchinstruction"><![CDATA[Type your search term here. Matching page names are displayed here.]]></string>
+    <string id="search_result_not_found"><![CDATA[This word does not yet exist in Plain Language. Explain the word now in Plain Language.]]></string>
+</language>

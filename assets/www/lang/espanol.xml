@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language id="espanol">
+	<string id="home"><![CDATA[inicio]]></string>
+	<string id="save_page"><![CDATA[guardar página]]></string>
+	<string id="saved_pages"><![CDATA[Páginas guardadas]]></string>
+    <string id="_search"><![CDATA[busca]]></string>
+    <string id="settings"><![CDATA[Configuración]]></string>
+	<string id="change_settings"><![CDATA[Cambiar la configuración]]></string>
+	<string id="change_settings_from_here"><![CDATA[Cambiar la configuración de aquí]]></string>
+	<string id="change_language"><![CDATA[Cambiar idioma]]></string>
+	<string id="language_english"><![CDATA[English]]></string>
+	<string id="language_german"><![CDATA[Deutsch]]></string>
+	<string id="language_espanol"><![CDATA[Español]]></string>
+	<string id="change_font_size"><![CDATA[Cambiar tamaño de la letra]]></string>
+	<string id="apply"><![CDATA[Aplicar]]></string>
+	<string id="page_have_been_saved"><![CDATA[La pagina esta guardada]]></string>
+	<string id="saved_on"><![CDATA[Guardado el ]]></string>
+    <string id="searchinstruction"><![CDATA[Introduzca el concepto de busqueda arriba. Se lo va a mostrar el nombre de la pagina correcta]]></string>
+    <string id="search_result_not_found"><![CDATA[Esta palabra todavia no existe en el Lenguaje Llano. Explique la palabra en el lenguaje sencillo ahora.]]></string>
+</language>

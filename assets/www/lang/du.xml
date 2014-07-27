@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language id="en">
+	<string id="home"><![CDATA[Start]]></string>
+	<string id="save_page"><![CDATA[Seite speichern]]></string>
+	<string id="saved_pages"><![CDATA[Gespeicherte Seiten]]></string>
+    <string id="_search"><![CDATA[Suche]]></string>
+    <string id="settings"><![CDATA[Einstellungen]]></string>
+	<string id="change_settings"><![CDATA[Einstellungen ändern]]></string>
+	<string id="change_settings_from_here"><![CDATA[Hier die Einstellungen ändern]]></string>
+	<string id="change_language"><![CDATA[Sprache ändern]]></string>
+	<string id="language_english"><![CDATA[English]]></string>
+	<string id="language_german"><![CDATA[Deutsch]]></string>
+	<string id="language_espanol"><![CDATA[Español]]></string>
+	<string id="change_font_size"><![CDATA[Schriftgröße ändern]]></string>
+	<string id="apply"><![CDATA[Ok]]></string>
+	<string id="page_have_been_saved"><![CDATA[Die Seite wurde gespeichert]]></string>
+	<string id="saved_on"><![CDATA[Gespeichert am ]]></string>
+    <string id="searchinstruction"><![CDATA[Gib oben den Suchbegriff ein. Passende Seitennamen werden dann hier angezeigt.]]></string>
+    <string id="search_result_not_found"><![CDATA[dieses Wort gibt es noch nicht in Leichter Sprache. Erkläre das Wort jetzt in Leichter Sprache.]]></string>
+</language>

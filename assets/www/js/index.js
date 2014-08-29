@@ -1,21 +1,3 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 var db;
 var defaultDirectory;
 var SavedPageList="";
@@ -23,25 +5,13 @@ var SELECTED_WIKI="http://hurraki.de"
 var SHARED_URL="";
 
 var app = {
-    // Application Constructor
     initialize: function() {
         this.bindEvents();
     },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        //app.receivedEvent('deviceready');
-		//setDeviceStage();
-		//$.noConflict();
 			jQuery(function() {
 				//app.checkConnection();
                 app.createDatabase();
@@ -86,7 +56,7 @@ var app = {
         })
         
     },
-    saveData:function(TITLE, DATA,LANGUAGE)
+    saveData:function(TITLE, DATA,LANGUAGE, callback)
     {
         
         navigator.globalization.dateToString(
@@ -95,11 +65,17 @@ var app = {
               
               //alert('date:' + date.value + '\n');
               
-                var SQL="INSERT INTO `saved_list` (`id`, `page_title`, `page_language`, `page_contents`, `saved_on`) VALUES (NULL, '"+TITLE+"', '"+LANGUAGE+"', '"+encodeURI(DATA)+"', '"+date.value+"')";
+                var SQL='INSERT INTO `saved_list` (`id`, `page_title`, `page_language`, `page_contents`, `saved_on`) VALUES (NULL, "'+encodeURIComponent(encodeURI(TITLE))+'", "'+LANGUAGE+'", "'+encodeURIComponent(encodeURI(DATA))+'", "'+date.value+'")';
         
-                db.executeSql(SQL);
+             //db.executeSql(SQL);
+              
+              db.executeSql(SQL, [], function(res) {
+                        callback(res)         
+              }, function(err){
+                    console.log("Error on data saving to database: "+JSON.stringify(err));
+              })
         
-                console.log(SQL)
+              console.log(SQL)
               
           },
           function () {
@@ -119,7 +95,7 @@ var app = {
     loadSettings:function()
     {
         db.executeSql("select meta_value from `settings` where meta_key='zoom'", [], function(res) { 
-            if(res){
+            if(!_.isUndefined(res)){
                for (var i=0; i<res.rows.length; i++){
                    jQuery("#content").css("zoom", "1."+(parseInt(res.rows.item(i).meta_value)-1));
                }              
@@ -127,7 +103,7 @@ var app = {
         });
         
         db.executeSql("select meta_value from `settings` where meta_key='language'", [], function(res) {   
-            if(res){
+            if(!_.isUndefined(res)){
                for (var i=0; i<res.rows.length; i++){
                    defaultLanguage=res.rows.item(i).meta_value
                    loadLanguage();

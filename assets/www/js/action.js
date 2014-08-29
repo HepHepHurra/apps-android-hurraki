@@ -225,6 +225,8 @@ function loadUrl(url)
 {
     SHARED_URL=url;
     
+    console.log("URL going to load >"+url);
+    
     jQuery.ajax({
 		url: url,
 		dataType: "html",
@@ -293,11 +295,11 @@ function loadUrl(url)
             
             //jQuery("#content").html("<h1 id='section_0' style='padding:12px 14px 7px 0px'>"+html.find("#firstHeading > span").html()+"</h1><div style='width:100%; height:auto' id='"+encodeURI(html.find("#firstHeading > span").html())+"' class='no' align='right' onclick='dotheshare(this.id)'><img src='img/share.png' width='30' height='30' /></div>"+html.find("#mw-content-text").html());
             
-            var FacebookCode='<a class="social_link" href="https://www.facebook.com/sharer/sharer.php?u='+encodeURI(SHARED_URL)+'" target="_blank" id="u_0_1"><span style="padding-left: 19px;" class="uiIconText"><img class="img" src="img/fb.png" alt="" style="top: 0px;" width="14" height="14">Share</span></a>';
+            var FacebookCode='<a class="social_link" href="https://www.facebook.com/sharer/sharer.php?u='+encodeURI(SHARED_URL)+'" target="_blank" id="u_0_1"><span style="padding-left: 3px;" class="uiIconText"><img class="img" src="img/facebook.png" alt="" style="top: 0px;" width="70" height="25"></span></a>';
             
-            var GooglePlus='<a class="social_link" href="https://plus.google.com/share?url='+encodeURI(SHARED_URL)+'" target="_blank" id="u_0_1"><span style="padding-left: 19px;" class="uiIconText"><img class="img" src="img/gplus-16.png" alt="" style="top: 0px;" width="14" height="14">Share</span></a>';
+            var GooglePlus='<a class="social_link" href="https://plus.google.com/share?url='+encodeURI(SHARED_URL)+'" target="_blank" id="u_0_1"><span style="padding-left: 3px;" class="uiIconText"><img class="img" src="img/googleplus.png" alt="" style="top: 0px;" width="70" height="25"></span></a>';
             
-            var Twitter='<a class="social_link" href="http://www.twitter.com/share?url='+encodeURI(SHARED_URL)+'" target="_blank" id="u_0_1"><span style="padding-left: 19px;" class="uiIconText"><img class="img" src="img/twitter-small.png" alt="" style="top: 0px;" width="14" height="14">Share</span></a>';
+            var Twitter='<a class="social_link" href="http://www.twitter.com/share?url='+encodeURI(SHARED_URL)+'" target="_blank" id="u_0_1"><span style="padding-left: 3px;" class="uiIconText"><img class="img" src="img/twitter.png" alt="" style="top: 0px;" width="70" height="25"></span></a>';
             
             http://www.twitter.com/share?url=http://www.google.com
             
@@ -314,21 +316,32 @@ function loadUrl(url)
             jQuery('#content a').each(function() {				
 					  jQuery(this).click(function(event){
 						event.preventDefault();
-                          if(jQuery(this).attr('class').indexOf("social_link") == -1){
+                          
+                          if(jQuery(this).attr('href').indexOf("https://www.facebook.com") == -1 && jQuery(this).attr('href').indexOf("https://plus.google.com") == -1 && jQuery(this).attr('href').indexOf("http://www.twitter.com") == -1){
+                              
                             if(jQuery(this).attr('href').indexOf("Hurraki:W%C3%B6rter_von_A_bis_Z#") != -1){
                                 onlyFor_A_to_Z_page(SELECTED_WIKI+jQuery(this).attr('href'));
                             }else{
+                                
                                 if(jQuery(this).attr('href').indexOf("/wiki/") != -1){
                                     loadUrl(SELECTED_WIKI+jQuery(this).attr('href'));
+                                    console.log("URL with /wiki/ >"+jQuery(this).attr('href'));
                                 }else if(jQuery(this).attr('href').indexOf("/w/") != -1){
+                                    console.log("URL with /w/ >"+jQuery(this).attr('href'));
                                     window.open(SELECTED_WIKI+jQuery(this).attr('href'), '_blank', 'location=yes');  
                                 }else{
+                                    console.log("URL blank >"+jQuery(this).attr('href'));
                                     window.open(jQuery(this).attr('href'), '_blank', 'location=yes');
                                 }
+                                
                             }
+
+                              
                           }else{
                                 window.open(jQuery(this).attr('href'), '_blank', 'location=yes');
                           }
+                          
+                          console.log("URL going to load >"+jQuery(this).attr('href'));
 					  });
             });
             
@@ -337,7 +350,7 @@ function loadUrl(url)
                 var iTag=jQuery(this)
                 
                 
-                if(jQuery(this).attr('src').indexOf("img/fb.png") == -1 && jQuery(this).attr('src').indexOf("img/gplus-16.png") == -1 && jQuery(this).attr('src').indexOf("img/twitter-small.png") == -1){
+                if(jQuery(this).attr('src').indexOf("img/facebook.png") == -1 && jQuery(this).attr('src').indexOf("img/googleplus.png") == -1 && jQuery(this).attr('src').indexOf("img/twitter.png") == -1){
                     
                     if(jQuery(this).attr('src').indexOf("http://") == -1){
                         jQuery(this).attr('src', SELECTED_WIKI+jQuery(this).attr('src'));
@@ -347,13 +360,25 @@ function loadUrl(url)
 
                     var fileName=(jQuery(this).attr('src').match(/.*\/(.*)$/)[1])
 
+                    
                     b.download_file(jQuery(this).attr('src'),'.hurraki/',fileName,function(theFile){
                         iTag.attr('src', theFile.toURI());
                         console.log("Replaced>"+theFile.toURI())
                     });
+                    
+                    /*convertImgToBase64(jQuery(this).attr('src'), function(base64Img){
+                        iTag.attr('src', base64Img);
+                    });*/
                 }
                 
             })
+            
+            jQuery('#content .new').each(function() {
+					jQuery(this).removeAttr("href");
+                    jQuery(this).css("color", "#000000");
+            });
+            
+            jQuery('#content table').css("display", "none");
             
 		},
 		error:function()
@@ -395,7 +420,17 @@ function SavePage()
        jQuery("#pageHeader").val()!="#settings_page#" && 
        jQuery("#pageHeader").val()!="#home#"){
         
-        app.saveData(jQuery('input#pageHeader').val(), jQuery("#content").html(), jQuery("#defaultLanguage").val());
+        app.saveData(jQuery('input#pageHeader').val(), jQuery("#content").html(), jQuery("#defaultLanguage").val(), function(data){
+            if(!_.isUndefined(data)){
+                console.log("Saved data result: "+JSON.stringify(data))
+                if (data.rowsAffected) {
+                    console.log("A row have been inserted successfully")
+                }else{
+                    console.log("No row have been inserted.")
+                }
+            }
+        });
+        
         alertify.alert(jQuery("#_page_have_been_saved").val());
         
     }
@@ -411,13 +446,11 @@ function ShowSavePage()
     
     var saved_on="Gespeichert am "
     
-    db.transaction(function(tx) {
-           db.executeSql("SELECT * FROM `saved_list`  ORDER BY saved_on DESC", [], function(res) {          
-                
-                //SavedPageList=SavedPageList+"<div id='"+res.rows.item(0)+"' style='border-bottom:#999 1px solid;' onclick='LoadSavedPage(this.id)'><h3>"+res.rows.item(1)+"</h3><h4>"+res.rows.item(3)+"</h4></div>";
-               console.log("ME CALLED"+res.rows.length)
-               
-               for (var i=0; i<res.rows.length; i++){
+    SQLQUERY("SELECT * FROM `saved_list` ORDER BY saved_on DESC", function(res){
+        
+        if(!_.isUndefined(res)){
+            
+            for (var i=0; i<res.rows.length; i++){
                    
                    if(defaultLanguage=="du"){
                        saved_on="Gespeichert am "
@@ -427,10 +460,8 @@ function ShowSavePage()
                        saved_on="Saved on "
                    }
                    
-                   
-                   
                    console.log("saved_on> "+saved_on)
-                    jQuery("#content").append("<div id='"+res.rows.item(i).id+"' style='border-bottom:#999 1px solid;' onclick='LoadSavedPage(this.id)'><h3>"+res.rows.item(i).page_title+"</h3><h4><span id='saved_on'>"+saved_on+"</span> "+res.rows.item(i).saved_on+"</h4></div>")
+                   jQuery("#content").append("<div id='"+res.rows.item(i).id+"' style='border-bottom:#999 1px solid;' onclick='LoadSavedPage(this.id)'><h3>"+decodeURIComponent(decodeURI(res.rows.item(i).page_title))+"</h3><h4><span id='saved_on'>"+saved_on+"</span> "+res.rows.item(i).saved_on+"</h4></div>")
                    
                }
                
@@ -439,17 +470,28 @@ function ShowSavePage()
                }
                
                loadLanguage();
-          });
+            
+        }
     })
     
+}
+
+function SQLQUERY(Q, callback)
+{
+    db.executeSql(Q, [], function(res) {
+            callback(res)         
+    })
 }
 
 function LoadSavedPage(id)
 {
     jQuery("#pageHeader").val("#saved_page#");
-    
-    db.transaction(function(tx) {
-           db.executeSql("SELECT page_language, page_contents FROM `saved_list` WHERE id="+id, [], function(res) {
+
+    SQLQUERY(("SELECT page_language, page_contents FROM `saved_list` WHERE id="+id),function(res){
+        if(!_.isUndefined(res)){
+            
+            
+            console.log("Called_execution "+id)
                
                for (var i=0; i<res.rows.length; i++){
                    
@@ -469,7 +511,7 @@ function LoadSavedPage(id)
                        SELECTED_WIKI="http://hurraki.de"
                    }
                    
-                   jQuery("#content").html(decodeURI(res.rows.item(i).page_contents));
+                   jQuery("#content").html(decodeURIComponent(decodeURI(res.rows.item(i).page_contents)));
                    
                    jQuery('#content .section_heading').on("click", function () {
                         jQuery(this).toggleClass('openSection');
@@ -498,9 +540,14 @@ function LoadSavedPage(id)
                     });
                    
                }
-          });
-    });
+            
+            
+        }
+    })
+    
+    
 }
+
 
 function dotheshare(title)
 {
@@ -539,6 +586,8 @@ function loadSettingsPage()
     console.log("Hitted")
     
     db.executeSql("select meta_key, meta_value from `settings`", [], function(res) { 
+        
+        if(!_.isUndefined(res)){
         
         var zoomLoop=""
         var LANGUAGE=""
@@ -589,6 +638,8 @@ function loadSettingsPage()
             jQuery("#content").html(i);
             jQuery("#pageHeader").val("#settings_page#");
             loadLanguage();
+        }
+            
         }
     }) 
 }

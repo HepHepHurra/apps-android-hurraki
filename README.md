@@ -35,8 +35,7 @@ Thank you for wanting to contribute to making the Hurraki App awesome.
 
 This is the first version of the Hurraki App. And its a great way to use Hurraki on your mobile device. The Hurraki dictionary runs with mediawiki. Mediawiki is constantly upadted. So should this app. You are welcome to upadate this app. For inspiration have a look at the [wikipedia app](https://play.google.com/store/apps/details?id=org.wikipedia&hl=en).
 
-### Translations ###                                                                                                                https://github.com/Hurraki/apps-android-hurraki/blob/master/build.xml
-
+### Translations ###                                                                                                              
 * Translation for this readme. Since Hurraki is availabale in Espanol and German as well, this readme should be translated in [Espanol](https://github.com/Hurraki/apps-android-hurraki/blob/master/READMEES.md) and [German](https://github.com/Hurraki/apps-android-hurraki/blob/master/READMEDE.md). 
 * Translation for the Google Play Store. There is still a description site in Spanisch missing
 

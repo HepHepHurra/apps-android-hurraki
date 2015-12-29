@@ -6,7 +6,7 @@ With this app you can use the Easy-to-read dictionary on your mobile device.
 For example:
 * Take the plain language dictionary everywhere you want
 * save articles
-* read plain language articeles without a internet connection
+* read plain language articles without a internet connection
 
 You can download the app at [Google Play](https://play.google.com/store/apps/details?id=com.hurraki.de&hl=en)
 

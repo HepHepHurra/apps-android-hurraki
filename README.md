@@ -31,7 +31,7 @@ For more information:
 
 Thank you for wanting to contribute to making the Hurraki App awesome. 
 
-## Add more functions ##
+### Add more functions ###
 
 This is the first version of the Hurraki App. And its a great way to use Hurraki on your mobile device. The Hurraki dictionary runs with mediawiki. Mediawiki is constantly upadted. So should this app. You are welcome to upadate this app. For inspiration have a look at the [wikipedia app](https://play.google.com/store/apps/details?id=org.wikipedia&hl=en).
 

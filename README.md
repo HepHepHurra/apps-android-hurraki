@@ -19,7 +19,7 @@ With Plain Language, everybody can understand.
 Plain Language should be available in many languages.
 Anyone with Web access can join Hurraki.
 Join Hurraki and help people to understand.
-Right now the Dictionary is available in three languages. ([English](http://hurraki.org/english/), [Spanisch](http://hurraki.org/espanol) and [German](http://hurraki.de).) 
+Right now the Dictionary is available in three languages. ([English](http://hurraki.org/english/), [Spanish](http://hurraki.org/espanol) and [German](http://hurraki.de).) 
 Also Hurraki is a great way to start to learn a new language. 
 
 For more information:

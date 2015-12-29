@@ -37,7 +37,7 @@ This is the first version of the Hurraki App. And its a great way to use Hurraki
 
 ### Translations ###
 
-* Translation for this readme. Since Hurraki is availabale in Espanol and German as well, this readme should be translated in [Espanol](https://github.com/Hurraki/apps-android-hurraki/blob/master/READMEES.md) and [German](https://github.com/Hurraki/apps-android-hurraki/blob/master/READMEDE.md). 
+* Translation for this readme. Since Hurraki is available in Espanol and German as well, this readme should be translated in [Espanol](https://github.com/Hurraki/apps-android-hurraki/blob/master/READMEES.md) and [German](https://github.com/Hurraki/apps-android-hurraki/blob/master/READMEDE.md). 
 * Translation for the Google Play Store. There is still a description site in Spanisch missing
 
 

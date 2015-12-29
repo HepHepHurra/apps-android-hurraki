@@ -29,7 +29,7 @@ For more information:
 
 ## Contributing ##
 
-Thank you for wanting to contribute to making Hurrakify awesome. 
+Thank you for wanting to contribute to making the Hurraki App awesome. 
 
 ## Add more functions ##
 

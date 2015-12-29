@@ -53,4 +53,4 @@ You are not a programmer but like the idea of Plain Language and Easy-to-read.
  * in [German](http://hurraki.de)
  * in [English](http://hurraki.org/english)
  * in [Spanisch](http://hurraki.org/espanol)
-* You like to taking pictures. There is also a Wiki for Easy-to-read pictures at [HDrei](http://hdrei.org)
+* You like taking pictures. There is also a Wiki for Easy-to-read pictures at [HDrei](http://hdrei.org)

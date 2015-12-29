@@ -43,7 +43,7 @@ This is the first version of the Hurraki App. And its a great way to use Hurraki
 
 ### Ideas ###
 
-You have a idea what Hurraki App would make better. Or you found something you dont like about the Hurraki App. Post your idea in [Issues](https://github.com/Hurraki/apps-android-hurraki/issues).
+You have a idea what the Hurraki App would make better. Or you found something you dont like about the Hurraki App. Post your idea in [Issues](https://github.com/Hurraki/apps-android-hurraki/issues).
 
 ### Other ways to contribute ###
 

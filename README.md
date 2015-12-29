@@ -4,7 +4,7 @@
 
 With this app you can use the Easy-to-read dictionary on your mobile device.
 For example:
-* Take the plain language dictionary everwhere you want
+* Take the plain language dictionary everywhere you want
 * save articles
 * read plain language articeles without a internet connection
 

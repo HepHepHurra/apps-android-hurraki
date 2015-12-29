@@ -25,6 +25,7 @@ Also Hurraki is a great way to start to learn a new language.
 For more information:
 * [10 Ways To Find Simple German Texts and Stories For Beginners Online](http://learnoutlive.com/simple-german-texts-beginners/)
 * [20 Resources for Beginners’ German Reading Practice](http://www.fluentin3months.com/german-reading-practice/)
+* [European standards for making information easy to read and understand](http://easy-to-read.eu/?page_id=17)
 
 
 ## Contributing ##
